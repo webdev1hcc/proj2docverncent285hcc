@@ -25,7 +25,7 @@ create table suggestions(
   user_id integer references users(id), 
   suggestion_text text, 
   created_at timestamp, 
-  modified_at timestamp 
+  updated_at timestamp 
 ); 
 
 -- user_suggestions_view 
@@ -34,7 +34,7 @@ create view user_suggestions_view as
   select users.id as usrid,users.name,users.username,users.department, 
     users.division,suggestions.id as suggid,
     suggestions.suggestion_text,suggestions.created_at,
-    suggestions.modified_at from 
+    suggestions.updated_at from 
     users join suggestions on users.id=suggestions.user_id;
 
 -- create function for inserting suggestion
@@ -45,7 +45,7 @@ create or replace function insertSuggestion(_uid integer, _sugg text)
   $func$
   begin
     execute 'insert into suggestions (user_id, suggestion_text, 
-      created_at,modified_at) values (' || _uid || ',' ||
+      created_at,updated_at) values (' || _uid || ',' ||
       quote_literal(_sugg) ||',now(),now())';
     return currval('suggestion_id_seq');
   end;
