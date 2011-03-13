@@ -1,0 +1,21 @@
+<!-- app/views/user_suggestions/index.html.erb -->
+<table border="1">
+  <tr>
+    <th>Name of submittor</th>
+    <th>Department</th>
+    <th>Division</th>
+    <th>Suggestion</th>
+    <th>Creation date</th>
+    <th>Last modified</th>
+  <tr>
+<% @usersuggestions.each do |sug| %>
+  <tr>
+    <td><%= sug.name %></td>
+    <td><%= sug.department %></td>
+    <td><%= sug.division %></td>
+    <td><%= sug.suggestion_text %></td>
+    <td><%= sug.created_at %></td>
+    <td><%= sug.updated_at %></td>
+  </tr>
+<% end %>
+</table>
