@@ -9,4 +9,5 @@ Proj2docverncent285hcc::Application.routes.draw do
   match "user_suggestions/create" => "user_suggestions#create"
   match "user_suggestions/chooseSuggestion" => "user_suggestions#chooseSuggestion"
   match "user_suggestions/edit" => "user_suggestions#edit"
+  match "user_suggestions/update" => "user_suggestions#update"
 end

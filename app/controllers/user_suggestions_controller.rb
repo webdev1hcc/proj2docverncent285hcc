@@ -25,4 +25,17 @@ class UserSuggestionsController < ApplicationController
       @usersuggestions = UserSuggestion.find_all_by_department(dept)
     end
   end
+  
+  def edit
+    suggid = params[:suggestion][:suggestion]
+    @suggestion = UserSuggestion.find_by_suggid(suggid)
+  end
+  
+  def update
+    id = params[:user_suggestion][:suggid]
+    s_text = params[:user_suggestion][:suggestion_text]
+    suggestion = Suggestion.find_by_id(id)
+    suggestion.update_attributes(:suggestion_text => s_text)
+    redirect_to :controller=>"user_suggestions", :action => "index"
+  end
 end
