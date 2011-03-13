@@ -19,3 +19,9 @@
   </tr>
 <% end %>
 </table>
+<% if cookies.signed[:user_id] > 0 %>
+  <%= link_to "Add suggestion", :controller => "user_suggestions",
+    :action => "new" %>
+  <%= link_to "Edit suggestion", :controller => "user_suggestions",
+    :action => "chooseSuggestion" %>
+<% end %>

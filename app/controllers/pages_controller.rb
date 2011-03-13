@@ -12,7 +12,10 @@ class PagesController < ApplicationController
       username + "','" + password + "')").to_i
     if username == "guest" && password == "guest"
       cookies.signed[:user_id] = -1
-      redirect_to :controller => "user_suggestions", :action=> "index"
+      redirect_to :controller => "user_suggestions", :action => "index"
+    elsif user_id > 0
+      cookies.signed[:user_id] = user_id
+      redirect_to :controller => "user_suggestions", :action => "index"
     end
   end
 

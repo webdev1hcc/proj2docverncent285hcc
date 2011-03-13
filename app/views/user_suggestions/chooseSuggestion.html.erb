@@ -1,0 +1,8 @@
+<!-- app/views/user_suggestions/chooseSuggestion.html.erb -->
+<%= form_for :suggestion, :url => { :action => "edit" } do |f| %>
+  <%= f.collection_select :suggestion, @usersuggestions, 
+    :suggid, :makeOption, 
+    :option => {:prompt => "Choose suggestion" } %><br />
+  <%= f.submit "Submit" %>
+<% end %>
+
