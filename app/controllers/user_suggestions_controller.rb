@@ -1,7 +1,11 @@
 # app/controllers/user_suggestions_controller.rb
 class UserSuggestionsController < ApplicationController
   def index
-    @usersuggestions = UserSuggestion.all
+    if params[:order] == nil
+      @usersuggestions = UserSuggestion.all
+    else
+      @usersuggestions = UserSuggestion.all(:order => params[:order])
+    end
   end
   
   def create

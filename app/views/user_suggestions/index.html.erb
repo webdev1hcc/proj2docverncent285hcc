@@ -1,4 +1,25 @@
 <!-- app/views/user_suggestions/index.html.erb -->
+<%= link_to "Sort name", :controller => "user_suggestions",
+  :action => "index", :order => 'name' %>&nbsp;
+<%= link_to "Sort name desc", :controller => "user_suggestions",
+  :action => "index", :order => 'name desc' %>&nbsp;<br />
+<%= link_to "Sort division", :controller => "user_suggestions",
+  :action => "index", :order => 'division' %>&nbsp;
+<%= link_to "Sort division desc", :controller => "user_suggestions",
+  :action => "index", :order => 'division desc' %>&nbsp;
+<%= link_to "Sort department", :controller => "user_suggestions",
+  :action => "index", :order => 'department' %>&nbsp;
+<%= link_to "Sort department desc", :controller => "user_suggestions",
+  :action => "index", :order => 'department desc' %>&nbsp;<br />
+<%= link_to "Sort create_date", :controller => "user_suggestions",
+  :action => "index", :order => 'created_at' %>&nbsp;
+<%= link_to "Sort create_date desc", :controller => "user_suggestions",
+  :action => "index", :order => 'created_at desc' %>&nbsp;
+<%= link_to "Sort mod_date", :controller => "user_suggestions",
+  :action => "index", :order => 'updated_at' %>&nbsp;
+<%= link_to "Sort mod_date desc", :controller => "user_suggestions",
+  :action => "index", :order => 'updated_at desc' %>&nbsp;
+
 <table border="1">
   <tr>
     <th>Name of submittor</th>
